@@ -20,12 +20,12 @@
 - 设置android:configChanges属性
 
 	```java
-		android:configChanges="orientation" //此设置为改变方向是不重新onCreate
+	android:configChanges="orientation" //此设置为改变方向是不重新onCreate
 	```
 - 设置
 
 	```java
-		android:screenOrientation="landscape" //固定竖屏
+	android:screenOrientation="landscape" //固定竖屏
 	```
 
 #### [关于Fragment(XXFragment) not attached to Activity 异常](http://www.eoeandroid.com/blog-469851-3594.html) (关键词: fragment)
