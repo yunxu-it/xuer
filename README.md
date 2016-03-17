@@ -7,7 +7,7 @@
 
 [Java](./JavaTips.md)
 
-[Git](./GItTips.md)
+[Git](./GitTips.md)
 
 # Other
 
