@@ -7,11 +7,11 @@
 
 #### What's the difference between `commit()` and `apply()` in Shared Preference? (关键词: sharedpreference)
 
--  `apply()` was added in 2.3, it commits without returning a boolean indicating success or failure.
+- `apply()` was added in 2.3, it commits without returning a boolean indicating success or failure.
 - `commit()` returns true if the save works, false otherwise.
 - `apply()` was added as the Android dev team noticed that almost no one took notice of the return value, so apply is faster as it is asynchronous.
 
-#### 涉及progress的，可以在子线程刷新UI (关键词: 线程)
+#### 涉及progress的，可以在子线程刷新UI (关键词: 线程/Thread)
 
 * [非UI线程可以去刷新UI吗（timertask调用progressbar的setProgress的特例)](http://blog.csdn.net/androidzhaoxiaogang/article/details/8136222)
 
@@ -58,7 +58,7 @@
 
 - 你并不需要系统保存的参数，只要你自己设置的参数能够传递过去，在另外一个Fragment里能够顺利接受就行了，现在android里提供了另外一种形式的提交方式commitAllowingStateLoss()，从名字上就能看出，这种提交是允许状态值丢失的。
 
-#### 使用getBackground().setAlpha，导致其他布局背景透明度都改变的问题
+#### 使用getBackground().setAlpha，导致其他布局背景透明度都改变的问题 (关键词: 透明度)
 
 - 在布局中多个控件同时使用一个资源的时候，这些控件会共用一个状态，例如ColorState，如果你改变了一个控件的状态，其他的控件都会接收到相同的通知。这时我们可以使用mutate()方法使该控件状态不定，这样不定状态的控件就不会共享自己的状态了。
 
@@ -66,11 +66,11 @@
 	titleLayout.getBackground().mutate().setAlpha(255);
 	```
 
-#### android.content.res.Resources$NotFoundException: String resource ID
+#### android.content.res.Resources$NotFoundException: String resource ID (关键词: NotFoundException)
 
 - 在setText()中使用了int的参数，被误以为Resources的ID，更改为String类型就行
 
-#### 以下情况，系统可能会弹出ANR对话框
+#### 以下情况，系统可能会弹出ANR对话框 (关键词: ANR)
 
 -  在Activity中，Main线程消息队列中的消息在5秒内没有得到响应
 -  在Service中，onStartCommand()方法执行超过5秒
@@ -79,7 +79,7 @@
 `UI线程阻塞时间超过20s会ANR，广播阻塞时间超过10s会ANR`
 
 
-#### 关于广播
+#### 关于广播 (关键词: BroadcastReceiver)
 
 - 注册广播方法一
 
