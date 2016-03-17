@@ -1,3 +1,20 @@
+#### 在Xml文件中使用tools命名空间
+
+- 为了看到预览效果，我们常常会在xml文件中添加测试数据，但是写完之后，常常忘记删除，这样会显示无用数据
+- 我们可以通过tools命名空间解决
+```
+xmlns:tools="http://schemas.android.com/tools"
+```
+- tools可以告诉Android Studio，哪些属性在运行的时候是被忽略的，只在设计布局的时候有效。
+- 比如我们要让android:text属性只在布局预览中有效可以这样
+```
+<TextView
+		 android:id="@+id/TextView"
+		 android:layout_width="wrap_content"
+		 android:layout_height="wrap_content"
+		 tools:text="show for preview" />
+```
+
 #### 从Eclipse迁移到Android Studio出现错误（找不到.9文件）(关键词: android studio)
 
 - 需要重新制作.9文件
