@@ -1,14 +1,13 @@
-# Usage
+Notes
+=====
 作为一些碎片信息记录文档
 
-# Language
+## Language
 
-[Android](./AndroidTips.md)
+- [Android](./AndroidTips.md)
+- [Java](./JavaTips.md)
+- [Git](./GitTips.md)
 
-[Java](./JavaTips.md)
+## Other
 
-[Git](./GitTips.md)
-
-# Other
-
-[毕业设计要点](./毕业设计.md)
+- [毕业设计要点](./毕业设计.md)
