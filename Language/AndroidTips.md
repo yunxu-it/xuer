@@ -1,3 +1,12 @@
+#### No layout manager attached; skipping layout错误
+
+原因是没有设置LayoutManager
+```java
+mRecyclerView.setLayoutManager(new LinearLayoutManager(this));//这里用线性显示 类似于listview
+//        mRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));//这里用线性宫格显示 类似于grid view
+//        mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, OrientationHelper.VERTICAL));//这里用线性宫格显示 类似于瀑布流
+```
+
 #### 在Xml文件中使用tools命名空间
 
 - 为了看到预览效果，我们常常会在xml文件中添加测试数据，但是写完之后，常常忘记删除，这样会显示无用数据
