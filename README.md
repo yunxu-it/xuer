@@ -11,6 +11,7 @@ Notes
 ## Other
 
 - [毕业设计要点](./Other/毕业设计.md)
+- [需求文档](./Other/需求文档.md)
 
 ## Work
 
