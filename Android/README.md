@@ -1,3 +1,23 @@
+#### Android常用混淆[跳转](./Android-proguard-rules.md)
+
+#### SwipeRefreshLayout自动刷新<http://www.jianshu.com/p/fb0d5f9adf82>
+
+初次进入页面自动刷新直接使用
+```
+	swipeRefreshLayout.setRefreshing(true)
+```
+是无效的
+
+可以使用以下方法
+```
+	swipeRefreshLayout.post(new Runnable() {
+	    @Override    
+	   public void run() {
+	       swipeRefreshLayout.setRefreshing(true);
+	    }
+	});
+```
+
 #### Fragment 嵌套 Fragment 白屏问题
 
 本来里面的fragment用的还是getFragmentManager,Fragment嵌套Fragment时，里面要用getChildFragmentManager。(转至<http://www.cnblogs.com/rewufu/p/4499949.html>)
