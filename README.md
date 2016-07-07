@@ -4,16 +4,9 @@ Notes
 
 ## Language
 
-- [Android](./Language/AndroidTips.md)
-- [Java](./Language/JavaTips.md)
-- [Git](./Language/GitTips.md)
+- [Android](./Android/)
+- [Java](./Java/)
+- [Git](./Git/)
 
 ## Other
 
-- [毕业设计要点](./Other/毕业设计.md)
-
-## Work
-
-- [药店](./Work/药店.md)
-- [生活通](./Work/生活通.md)
-- [职教平台](./Work/职教平台.md)

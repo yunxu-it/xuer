@@ -1,3 +1,12 @@
+#### Fragment 嵌套 Fragment 白屏问题
+
+本来里面的fragment用的还是getFragmentManager,Fragment嵌套Fragment时，里面要用getChildFragmentManager。(转至<http://www.cnblogs.com/rewufu/p/4499949.html>)
+
+```java
+FragmentManager childFragmentManager = getChildFragmentManager();
+ViewPager_Adapter viewPager_adapter = new ViewPager_Adapter(childFragmentManager, fragments);　　　　//FragmentPagerAdapter
+```
+
 #### No layout manager attached; skipping layout错误
 
 原因是没有设置LayoutManager
