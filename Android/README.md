@@ -1,6 +1,7 @@
-#### Android常用混淆[跳转](./Android-proguard-rules.md)
+#### Android常用
+* [常用混淆](./Android-proguard-rules.md)
 
-#### SwipeRefreshLayout自动刷新<http://www.jianshu.com/p/fb0d5f9adf82>
+#### SwipeRefreshLayout自动刷新（转自<http://www.jianshu.com/p/fb0d5f9adf82>）
 
 初次进入页面自动刷新直接使用
 ```
