@@ -10,7 +10,7 @@
 
 - 设置android:configChanges属性
 
-	```java
+	```Java
 	android:configChanges="orientation" //此设置为改变方向是不重新onCreate
 	```
 - 设置
