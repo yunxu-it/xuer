@@ -1,8 +1,11 @@
-Notes
-=====
-作为一些碎片信息记录文档，作为博客的数据整理来源.
 
-### 博客地址：[winxo.cn](http://winxo.cn)
+### 线程/Thread
 
+* [非UI线程可以去刷新UI吗（timertask调用progressbar的setProgress的特例)](http://blog.csdn.net/androidzhaoxiaogang/article/details/8136222)
 
+### Local
 
+* [Android](./post/Android.md)
+* [Git](./post/Git.md)
+* [Java](./post/Java.md)
+* [Proguard](./post/Proguard.md)
