@@ -1,5 +1,5 @@
 ### IDE
-* #### Android Studio
+* #### AndroidStudio
   * [50 Android Studio Tips, Tricks & Resources you should be familiar with, as an Android Developer](https://medium.com/@mmbialas/50-android-studio-tips-tricks-resources-you-should-be-familiar-with-as-an-android-developer-af86e7cf56d2#.u4v6kur7g)
 
 ### Android
@@ -12,7 +12,7 @@
 
 * #### Bug
   * [带你重新认识：Android Splash页秒开 Activity白屏 Activity黑屏](http://blog.csdn.net/yanzhenjie1003/article/details/52201896) [*Splash*]
- 
+
 ### Local
 
 * [Android](./post/Android.md)
