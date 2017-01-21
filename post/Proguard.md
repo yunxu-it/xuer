@@ -13,9 +13,8 @@
 ||<A HREF="#retrofit">Retrofit</A> |2.x|
 |<A HREF="#S">S</A> |
 ||<A HREF="#sweetalert">sweetalert</A> ||
-|<A HREF="#U">U</A> |
+|<A HREF="#U">U</A> ||||
 ||<A HREF="#imageloader">universal image loader</A>||
-||<A HREF="#sweetaler">sweetalert</A> ||
 |<A HREF="#V">V</A> |
 
 
