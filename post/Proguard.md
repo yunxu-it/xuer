@@ -13,7 +13,6 @@
 ||<A HREF="#retrofit">Retrofit</A> |2.x|
 |<A HREF="#S">S</A> |
 ||<A HREF="#sweetalert">sweetalert</A> ||
-|<A HREF="#U">U</A> ||||
 ||<A HREF="#imageloader">universal image loader</A>||
 |<A HREF="#V">V</A> |
 
@@ -54,13 +53,6 @@
 ```
 
 ### [UniversalImageLoader](#imageloader)
-```
--dontwarn com.nostra13.universalimageloader.**
--keep class com.nostra13.universalimageloader.** { *; }
-```
-
-
-### [UniversalImageLoader](#sweetaler)
 ```
 -dontwarn com.nostra13.universalimageloader.**
 -keep class com.nostra13.universalimageloader.** { *; }
