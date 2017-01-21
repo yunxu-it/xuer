@@ -53,7 +53,7 @@
 -keep class cn.pedant.SweetAlert.** { *; }
 ```
 
-### [universal image loader](#imageloader)
+### [UniversalImageLoader](#imageloader)
 ```
 -dontwarn com.nostra13.universalimageloader.**
 -keep class com.nostra13.universalimageloader.** { *; }
