@@ -14,7 +14,7 @@
 |<A HREF="#S">S</A> |
 ||<A HREF="#sweetalert">sweetalert</A> ||
 |<A HREF="#U">U</A> |
-||<A HREF="#universalimageloader">universal image loader</A> ||
+||<A HREF="#imageloader">universal image loader</A> ||
 
 
 ### [ButterKnife](#butterknife)
@@ -52,7 +52,7 @@
 -keep class cn.pedant.SweetAlert.** { *; }
 ```
 
-### [universal image loader](#universalimageloader)
+### [universal image loader](#imageloader)
 ```
 -dontwarn com.nostra13.universalimageloader.**
 -keep class com.nostra13.universalimageloader.** { *; }
