@@ -2,7 +2,7 @@
 |:-----: |:-----------:|:-----------:|:-----------:|
 |<A HREF="#A">A</A> |
 |<A HREF="#B">B</A> |
-||<A HREF="#butterKnife">ButterKnife</A> |8.x|
+||<A HREF="#butterknife">ButterKnife</A> |8.x|
 |<A HREF="#C">C</A> |
 |<A HREF="#I">I</A> |
 |<A HREF="#L">L</A> |
@@ -14,10 +14,10 @@
 |<A HREF="#S">S</A> |
 ||<A HREF="#sweetalert">sweetalert</A> ||
 |<A HREF="#U">U</A> |
-||<A HREF="#universalimageloader">universal image loader</A> |0|
+||<A HREF="#universalimageloader">universal image loader</A> ||
 
 
-### [ButterKnife](#butterKnife)
+### [ButterKnife](#butterknife)
 ```
 # Retain generated class which implement ViewBinder.
 -keep public class * implements butterknife.internal.ViewBinder { public <init>(); }
