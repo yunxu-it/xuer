@@ -1,5 +1,5 @@
 ### IDE
-* ####   Android Studio
+* #### Android Studio
 
    * [50 Android Studio Tips, Tricks & Resources you should be familiar with, as an Android Developer](https://medium.com/@mmbialas/50-android-studio-tips-tricks-resources-you-should-be-familiar-with-as-an-android-developer-af86e7cf56d2#.u4v6kur7g)
 
@@ -21,3 +21,4 @@
 * [Git](./post/Git.md)
 * [Java](./post/Java.md)
 * [Proguard](./post/Proguard.md)
+
