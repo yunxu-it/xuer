@@ -1,4 +1,21 @@
-#### 
+#### Android Duplicate files copied in APK
+原因是依赖库文件重合了
+
+打开项目下面的 build.gradle 文件，在 android 代码块中添加下面代码
+
+```java
+android {  
+    packagingOptions {  
+        exclude 'META-INF/DEPENDENCIES'  
+        exclude 'META-INF/NOTICE'  
+        exclude 'META-INF/LICENSE'  
+        exclude 'META-INF/LICENSE.txt'  
+        exclude 'META-INF/NOTICE.txt'  
+    }  
+}  
+```
+
+
 
 #### 涉及progress的，可以在子线程刷新UI (关键词: 线程/Thread)
 
