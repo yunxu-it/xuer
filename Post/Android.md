@@ -25,19 +25,6 @@ android {
 
 * [非UI线程可以去刷新UI吗（timertask调用progressbar的setProgress的特例)](http://blog.csdn.net/androidzhaoxiaogang/article/details/8136222)
 
-#### 设置横屏不重新执行onCreate方法 (关键词: activity)
-
-- 设置android:configChanges属性
-
-  ```Java
-  android:configChanges="orientation" //此设置为改变方向是不重新onCreate
-  ```
-- 设置
-
-  ```java
-  android:screenOrientation="landscape" //固定竖屏
-  ```
-
 #### 在使用Fragment保存参数的时候，可能是因为需要保存的参数比较大或者比较多，引起异常(关键词: fragment)
 
 - 开始
