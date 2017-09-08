@@ -1,8 +1,15 @@
 ### Android
 
-#### 涉及progress的，可以在子线程刷新UI (关键词: 线程/Thread)
+#### 自定义字体
 
-* [非UI线程可以去刷新UI吗（timertask调用progressbar的setProgress的特例)](http://blog.csdn.net/androidzhaoxiaogang/article/details/8136222)
+```java
+// 得到TextView控件对象
+TextView textView = (TextView) findViewById(R.id.custom);
+// 将字体文件保存在assets/fonts/目录下，www.linuxidc.com创建Typeface对象
+Typeface typeFace = Typeface.createFromAsset(getAssets(),"fonts/DroidSansThai.ttf");
+// 应用字体
+textView.setTypeface(typeFace);
+```
 
 #### 在使用Fragment保存参数的时候，可能是因为需要保存的参数比较大或者比较多，引起异常(关键词: fragment)
 
