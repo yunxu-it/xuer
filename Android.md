@@ -12,6 +12,40 @@ Typeface typeFace = Typeface.createFromAsset(getAssets(),"fonts/DroidSansThai.tt
 // 应用字体
 textView.setTypeface(typeFace);
 ```
+#### 单例模式
+
+```java
+// 基础懒汉式，线程不安全
+public class Singleton {
+    private static Singleton instance;
+    private Singleton (){}
+    public static Singleton getInstance() {
+     if (instance == null) {
+         instance = new Singleton();
+     }
+     return instance;
+    }
+}
+
+// 静态内部类
+public class Singleton {  
+    private static class SingletonHolder {  
+        private static final Singleton INSTANCE = new Singleton();  
+    }  
+    private Singleton (){}  
+    public static final Singleton getInstance() {  
+        return SingletonHolder.INSTANCE; 
+    }  
+}
+
+// 枚举
+public enum Singleton{
+    INSTANCE;
+}
+```
+
+
+
 ### UI
 
 #### RecyclerView
