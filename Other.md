@@ -20,7 +20,7 @@ gpupdate /force
 ### Android Studio logcat配色
 
 
-Assert:  <span style="backgroundcolor:#AA66CC">#AA66CC</span>
+Assert:  <span style="color:#AA66CC">#AA66CC</span>
 Debug:   #33B5E5
 Error:   #FF4444
 Info:    #99CC00
