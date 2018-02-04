@@ -12,6 +12,17 @@ Typeface typeFace = Typeface.createFromAsset(getAssets(),"fonts/DroidSansThai.tt
 // 应用字体
 textView.setTypeface(typeFace);
 ```
+#### CPU架构
+
+|  日期   |         |    2010+    | 2011+ | 2012+ |           |        | 2014+  |
+| :---: | :-----: | :---------: | :---: | :---: | :-------: | :----: | :----: |
+| CPU架构 |  ARMv5  |    ARMv7    |  x86  | MIPS  |   ARMv8   | MIPS64 | x86_64 |
+| 对应ABI | armeabi | armeabi-v7a |  x86  | mips  | arm64-v8a | mips64 | x86_64 |
+
+#### 使用android-21平台版本编译的.so文件运行在android-15的设备上
+
+使用NDK时，你可能会倾向于使用最新的编译平台，但事实上这是错误的，因为NDK平台不是后向兼容的，而是前向兼容的。推荐使用app的minSdkVersion对应的编译平台。
+
 #### 单例模式
 
 ```java
