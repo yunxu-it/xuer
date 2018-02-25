@@ -16,11 +16,26 @@
 
 ###### （1）type
 
-- feature：功能
-- bug：修复 bug
-- refactor：重构，不新增功能
-- style：格式（不影响代码运行的变动）
-- test：增加测试代码
+- feat：功能(feature)
+- fix：修复 bug
+- docs：文档（documentation）
+- style： 格式（不影响代码运行的变动）
+- refactor：重构（即不是新增功能，也不是修改bug的代码变动）
+- test：增加测试
+- chore：构建过程或辅助工具的变动
+
+**如果 `type` 为 `feat` 和 `fix`，则该 commit 将肯定出现在 Change log 之中**
+
+##### (2) scope（option）
+
+- 说明 commit 影响的范围，数据层、控制层，视图层等
+
+##### (3) subject
+
+- 简单描述 commit 的基本内容
+  - 以动词开头，使用第一人称现在时，比如`change`，而不是`changed`或`changes`
+  - 第一个字母小写
+  - 结尾不加句号（`.`）
 
 ### 二、分支管理
 
