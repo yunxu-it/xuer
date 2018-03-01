@@ -145,7 +145,7 @@ git add filename.txt
 git add . # 添加当前目录下的所有文件
 ```
 
-##### （3）提交更新
+#####  （3）提交更新
 
 ```bash
 git commit -m "feat: 增加了某功能"
@@ -153,7 +153,7 @@ git commit -m "feat: 增加了某功能"
 git commit -v 
 ```
 
-#####（4）推送到远程仓库
+##### （4）推送到远程仓库
 
 ```bash
 git push origin master
@@ -161,14 +161,14 @@ git push origin master
 # master 远程仓库分支
 ```
 
-#####（5）远程仓库管理
+##### （5）远程仓库管理
 
 ```bash
 git remote -v # 查看当前远程仓库详情
 git remote add origin "git@github.com:example/example.git" # 添加新的远程仓库
 ```
 
-#####（6）分支管理
+##### （6）分支管理
 
 ```bash
 # 查看分支
@@ -187,7 +187,7 @@ git merge feature/f01
 git branch -d feature/f01
 ```
 
-#####（7）其他命令
+##### （7）其他命令
 
 ```bash
 # 查看提交记录
@@ -203,7 +203,7 @@ git checkout -- filename.txt
 
 #### 3. Git flow相关命令示例
 
-#####（1）初始化
+##### （1）初始化
 
 ```bash
 git flow init
@@ -211,20 +211,20 @@ git flow init
 # 如已存在开发分支，则需先以 git flow 命名方式重命名
 ```
 
-#####（2）开启新功能
+##### （2）开启新功能
 ```bash
 git flow feature start feature-name
 git flow feature finish feature-name
 # finish 之前先 commit 当前修改
 ```
 
-#####（3）发布版本
+##### （3）发布版本
 ```bash
 git flow release start 1.0.0
 git flow release finish 1.0.0
 ```
 
-#####（4）热修复
+##### （4）热修复
 ```bash
 git flow hotfix start 1.0.1
 git flow hotfix finish 1.0.1
