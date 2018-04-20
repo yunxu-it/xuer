@@ -153,7 +153,23 @@ android {
 
 
 
+### MemoryLeak
 
+#### 高德地图
 
+如果开启了`amap.setMyLocationEnabled(true)` 
 
+记得在你 `onDestroy`内设置`amap.setMyLocationEnabled(false)` 
+
+```Java
+@Override
+public void onDestroy() {
+	super.onDestroy();
+    mMapView.onDestroy();
+    if (mMap != null) {
+        mMap.setMyLocationEnabled(false);
+        mMap.clear();
+    }
+}
+```
 
