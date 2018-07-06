@@ -59,6 +59,35 @@ public enum Singleton{
 
 ### UI
 
+#### 透明状态栏
+
+```Java
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+      // 透明状态栏，导航栏
+      View decorView = getWindow().getDecorView();
+      int option = View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+          | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+          | View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
+      decorView.setSystemUiVisibility(option);
+      getWindow().setNavigationBarColor(Color.TRANSPARENT);
+      getWindow().setStatusBarColor(Color.TRANSPARENT);
+}
+
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && useStatusBarColor) {
+      // Android6.0以后可以对状态栏文字颜色和图标进行修改
+      getWindow().getDecorView() .setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+}
+```
+
+#### 默认EditText不获取 focus
+
+> 在其父级组件添加以下代码
+
+```xml
+android:focusable="true"
+android:focusableInTouchMode="true"
+```
+
 #### RecyclerView
 
 ```java
@@ -124,7 +153,23 @@ android {
 
 
 
+### MemoryLeak
 
+#### 高德地图
 
+如果开启了`amap.setMyLocationEnabled(true)` 
 
+记得在你 `onDestroy`内设置`amap.setMyLocationEnabled(false)` 
+
+```Java
+@Override
+public void onDestroy() {
+	super.onDestroy();
+    mMapView.onDestroy();
+    if (mMap != null) {
+        mMap.setMyLocationEnabled(false);
+        mMap.clear();
+    }
+}
+```
 
