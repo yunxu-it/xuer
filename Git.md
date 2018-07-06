@@ -1,8 +1,21 @@
+#### git remote: HTTP Basic: Access denied 错误
+
+```bash
+# 密码有改动
+git config --system --unset credential.helper
+# 其他方式(未验证)
+git config –global http.emptyAuth true
+```
+
+
+
 #### Sourcetree - Fatal: ArgumentException encountered. 
 
 在标签栏“工具”-“选项”中，Git标签页，根据所选择Git的版本，更新Git
 
 此问题可能是旧版本Git的原因
+
+
 
 #### [warning: LF will be replaced by CRLF | fatal: CRLF would be replaced by LF](http://blog.csdn.net/feng88724/article/details/11600375) (关键词: LF/CRLF)
 
