@@ -59,6 +59,20 @@ public enum Singleton{
 
 ### UI
 
+#### ImageView
+
+- 设置 MaxHeight 无效
+
+> An optional argument to supply a maximum height for this view. Only valid if`setAdjustViewBounds(boolean)` has been set to true. 
+
+```xml
+// 此二者必须同时存在
+android:adjustViewBounds="true"
+android:maxHeight="10dp"
+```
+
+
+
 #### 透明状态栏
 
 ```Java
@@ -81,9 +95,8 @@ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && useStatusBarColor) {
 
 #### 默认EditText不获取 focus
 
-> 在其父级组件添加以下代码
-
 ```xml
+//  在其父级组件添加以下代码
 android:focusable="true"
 android:focusableInTouchMode="true"
 ```
