@@ -14,3 +14,11 @@
 
 > **重点：如果上面的方法没有效果，需要检查电脑防火墙是否屏蔽了NodeJS** 
 
+#### 运行失败
+
+> Could not install the app on the device, read the error above for details.
+> Make sure you have an Android emulator running or a device connected and have
+> set up your Android development environment:
+> https://facebook.github.io/react-native/docs/getting-started.html
+
+- 检查`gradlew`权限是否可执行
