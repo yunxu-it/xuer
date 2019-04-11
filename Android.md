@@ -1,3 +1,7 @@
+## Todo 
+
+- [ ] A resource failed to call destroy
+
 ## Origin
 
 ### Base
@@ -39,14 +43,14 @@ public class Singleton {
 }
 
 // 静态内部类
-public class Singleton {  
-    private static class SingletonHolder {  
-        private static final Singleton INSTANCE = new Singleton();  
-    }  
-    private Singleton (){}  
-    public static final Singleton getInstance() {  
-        return SingletonHolder.INSTANCE; 
-    }  
+public class Singleton {
+    private static class SingletonHolder {
+        private static final Singleton INSTANCE = new Singleton();
+    }
+    private Singleton (){}
+    public static final Singleton getInstance() {
+        return SingletonHolder.INSTANCE;
+    }
 }
 
 // 枚举
@@ -126,15 +130,15 @@ mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
 
 
 ```groovy
-android {  
-	packagingOptions {  
-        exclude 'META-INF/DEPENDENCIES'  
-        exclude 'META-INF/NOTICE'  
-        exclude 'META-INF/LICENSE'  
-        exclude 'META-INF/LICENSE.txt'  
-        exclude 'META-INF/NOTICE.txt'  
-    }  
-}  
+android {
+	packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+}
 ```
 
 #### Vivo安装apk异常
@@ -149,7 +153,7 @@ android {
    ```
 
 
-##### 
+#####
 
 
 ## Third-Party
@@ -185,9 +189,9 @@ android {
 
 #### 高德地图
 
-如果开启了`amap.setMyLocationEnabled(true)` 
+如果开启了`amap.setMyLocationEnabled(true)`
 
-记得在你 `onDestroy`内设置`amap.setMyLocationEnabled(false)` 
+记得在你 `onDestroy`内设置`amap.setMyLocationEnabled(false)`
 
 ```Java
 @Override
@@ -199,5 +203,16 @@ public void onDestroy() {
         mMap.clear();
     }
 }
+```
+
+### Glide默认图，error图使用circleCrop无效
+
+```kotlin
+// Glide提供了Transformation 可以让图片显示成各种样式，但是使用Transformation时会有个问题，比如使用CircleCrop时预览图和加载失败后显示的图并不是圆形 https://www.jianshu.com/p/c087239333e0
+Glide.with(it).load(userData.avatar)
+    .error(Glide.with(it).load(R.mipmap.photo).circleCrop())
+    .diskCacheStrategy(DiskCacheStrategy.ALL)
+    .circleCrop()
+    .into(avatar)
 ```
 
