@@ -169,6 +169,18 @@ Glide.with(it).load(userData.avatar)
 
 Java默认有一个无参构造函数，但是一旦创建了一个有参构造函数，无参构造函数就需要自己重新定义,而当前问题的原因就是无参构造函数找不到。
 
+#### 全面屏适配
+
+- 官方推荐
+
+```xml
+<meta-data android:name="android.max_aspect"
+    android:value="ratio_float"/>
+// value 最好在2.1以上
+```
+
+
+
 ## Note
 
 #### CPU架构
