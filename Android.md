@@ -2,30 +2,17 @@
 
 - [ ] A resource failed to call destroy
 
-## Origin
+## Solution
 
-### Base
+#### ImageView 设置 MaxHeight 无效 
 
-#### 自定义字体
+> An optional argument to supply a maximum height for this view. Only valid if `setAdjustViewBounds(boolean)` has been set to true. 
 
-```java
-// 得到TextView控件对象
-TextView textView = (TextView) findViewById(R.id.custom);
-// 将字体文件保存在assets/fonts/目录下，www.linuxidc.com创建Typeface对象
-Typeface typeFace = Typeface.createFromAsset(getAssets(),"fonts/DroidSansThai.ttf");
-// 应用字体
-textView.setTypeface(typeFace);
+```xml
+// 此二者必须同时存在
+android:adjustViewBounds="true"
+android:maxHeight="10dp"
 ```
-#### CPU架构
-
-|  日期   |         |    2010+    | 2011+ | 2012+ |           |        | 2014+  |
-| :---: | :-----: | :---------: | :---: | :---: | :-------: | :----: | :----: |
-| CPU架构 |  ARMv5  |    ARMv7    |  x86  | MIPS  |   ARMv8   | MIPS64 | x86_64 |
-| 对应ABI | armeabi | armeabi-v7a |  x86  | mips  | arm64-v8a | mips64 | x86_64 |
-
-#### 使用android-21平台版本编译的.so文件运行在android-15的设备上
-
-使用NDK时，你可能会倾向于使用最新的编译平台，但事实上这是错误的，因为NDK平台不是后向兼容的，而是前向兼容的。推荐使用app的minSdkVersion对应的编译平台。
 
 #### 单例模式
 
@@ -59,23 +46,19 @@ public enum Singleton{
 }
 ```
 
+#### Android Duplicate files copied in APK
 
-
-### UI
-
-#### ImageView
-
-- 设置 MaxHeight 无效
-
-> An optional argument to supply a maximum height for this view. Only valid if`setAdjustViewBounds(boolean)` has been set to true. 
-
-```xml
-// 此二者必须同时存在
-android:adjustViewBounds="true"
-android:maxHeight="10dp"
+```groovy
+android {
+	packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+}
 ```
-
-
 
 #### 透明状态栏
 
@@ -99,13 +82,15 @@ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && useStatusBarColor) {
 
 #### 默认EditText不获取 focus
 
+
 ```xml
 //  在其父级组件添加以下代码
 android:focusable="true"
 android:focusableInTouchMode="true"
 ```
 
-#### RecyclerView
+#### RecyclerView瀑布流
+
 
 ```java
 // 瀑布流位置变化
@@ -122,26 +107,8 @@ mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
 });
 ```
 
-## IDE
-
-### gradle
-
-#### Android Duplicate files copied in APK
-
-
-```groovy
-android {
-	packagingOptions {
-        exclude 'META-INF/DEPENDENCIES'
-        exclude 'META-INF/NOTICE'
-        exclude 'META-INF/LICENSE'
-        exclude 'META-INF/LICENSE.txt'
-        exclude 'META-INF/NOTICE.txt'
-    }
-}
-```
-
 #### Vivo安装apk异常
+
 
 1. 多数手机安装apk调试异常，都与instant run冲突有关
 
@@ -151,14 +118,6 @@ android {
    # 在gradle.properties里面添加
    android.injected.testOnly=false
    ```
-
-
-#####
-
-
-## Third-Party
-
-### Realm
 
 #### fori循环更新出错
 
@@ -177,17 +136,7 @@ android {
  }
 ```
 
-### Rxjava
-
-#### duplicate files copied in apk meta-inf/rxjava.properties
-
-> 当Rxjava1和Rxjava2同时出现就可能出现这个情况，但是如果只保留了一个版本，编译之后还出现这种情况，就要看看是否遗漏了`adapter-rxjava`与`adapter-rxjava2`的版本切换
-
-
-
-### MemoryLeak
-
-#### 高德地图
+#### 高德地图Memory Leak
 
 如果开启了`amap.setMyLocationEnabled(true)`
 
@@ -205,7 +154,7 @@ public void onDestroy() {
 }
 ```
 
-### Glide默认图，error图使用circleCrop无效
+#### Glide默认图，error图使用circleCrop无效
 
 ```kotlin
 // Glide提供了Transformation 可以让图片显示成各种样式，但是使用Transformation时会有个问题，比如使用CircleCrop时预览图和加载失败后显示的图并不是圆形 https://www.jianshu.com/p/c087239333e0
@@ -216,3 +165,78 @@ Glide.with(it).load(userData.avatar)
     .into(avatar)
 ```
 
+#### org.simpleframework.xml.core.PersistenceException: Constructor not matched for class
+
+Java默认有一个无参构造函数，但是一旦创建了一个有参构造函数，无参构造函数就需要自己重新定义,而当前问题的原因就是无参构造函数找不到。
+
+## Note
+
+#### CPU架构
+
+|  日期   |         |    2010+    | 2011+ | 2012+ |           |        | 2014+  |
+| :---: | :-----: | :---------: | :---: | :---: | :-------: | :----: | :----: |
+| CPU架构 |  ARMv5  |    ARMv7    |  x86  | MIPS  |   ARMv8   | MIPS64 | x86_64 |
+| 对应ABI | armeabi | armeabi-v7a |  x86  | mips  | arm64-v8a | mips64 | x86_64 |
+
+- 使用android-21平台版本编译的.so文件运行在android-15的设备上
+
+  使用NDK时，你可能会倾向于使用最新的编译平台，但事实上这是错误的，因为NDK平台不是后向兼容的，而是前向兼容的。推荐使用app的minSdkVersion对应的编译平台。
+  
+  
+
+#### 视图类优化
+
+- 移除布局中不需要的背景（`theme`自带背景）
+
+  ```xml
+  // 方法一
+  <style name="AppTheme" parent="parent">
+      <item name="android:windowBackground">@null</item>
+  </style>
+  
+  // 方法二，在onCreate()中使用
+  getWindow().setBackgroundDrawable(null);
+  ```
+
+- 移除控件不需要的背景
+
+- 扁平化layout
+
+  - `LinearLayout`使用`layout_weight`时，子View需要测量两次，特别是List时，重复测量多次
+  - 减少布局的嵌套，使用merge标签合并相同布局嵌套，使用include复用布局
+  - 使用lint来优化布局的层次结构，相关优化意见在`Android>Lint>Performance`
+
+- 多张重叠图层使用，使用clipRect()减少自定义View的过度绘制
+
+- 使用更优布局
+
+  - 在无嵌套布局的情况下，`FrameLayout`和`LinearLayout`的性能比`RelativeLayout`更好。因为`RelativeLayout`会测量每个子节点两次
+  - `ConstraintLayout`的性能比`RelativeLayout`更好，推荐使用`ConstraintLayout`。后面会介绍`ConstraintLayout`的使用
+
+- 使用ViewStub延迟加载
+
+- onDraw()中不要创建新的局部变量，不做耗时操作
+
+##### 来源
+
+- [那些 Android 程序员必会的视图优化策略](https://mp.weixin.qq.com/s/ep-Assy2j_EOUW8uWUQfSQ)
+
+#### Activity
+
+##### 生命周期
+
+- onUserInteraction
+
+> activity在分发各种事件的时候会调用该方法（只要与用户在进行交互）
+>
+> 注意：启动另一个activity，Activity#onUserInteraction()会被调用两次，一次是activity捕获到事件，另一次是调用Activity#onUserLeaveHint()之前会调用Activity#onUserInteraction()。
+>
+> 使用场景：监听用户是否长时间未交互(屏保)
+
+- onUserLeaveHint
+
+> 用户手动离开当前activity，会调用该方法，比如用户主动切换任务，短按home进入桌面等。
+>
+> 系统自动切换activity不会调用此方法，如来电，灭屏等。
+>
+> 使用场景：监听用户主动离开页面(home，back，menu 键)
