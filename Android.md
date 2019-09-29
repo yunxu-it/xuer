@@ -1,4 +1,4 @@
-## Todo 
+## Todo
 
 - [ ] A resource failed to call destroy
 
@@ -303,3 +303,18 @@ Java默认有一个无参构造函数，但是一旦创建了一个有参构造�
 > 系统自动切换activity不会调用此方法，如来电，灭屏等。
 >
 > 使用场景：监听用户主动离开页面(home，back，menu 键)
+
+#### 技巧
+
+##### 查看apk签名类型
+
+```shell
+// apksigner命令来源于 androidSdk/build-tools/*.*.* 文件夹
+apksigner verify -v xxx.apk
+
+Verifies
+Verified using v1 scheme (JAR signing): true
+Verified using v2 scheme (APK Signature Scheme v2): false
+Verified using v3 scheme (APK Signature Scheme v3): false
+```
+
