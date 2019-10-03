@@ -1,10 +1,5 @@
-### ① Introduction
+#### Description
+A clear and concise description of what the issue is about.
 
-### ② Purpose
-
-### ③ Targets
-
-### ④ Steps
-
-### ⑤ Extra
+#### Solution
 
