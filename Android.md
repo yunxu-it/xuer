@@ -158,18 +158,6 @@ mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
 });
 ```
 
-#### Vivo安装apk异常
-
-
-1. 多数手机安装apk调试异常，都与instant run冲突有关
-
-2. 解析包错误异常
-
-   ```groovy
-   # 在gradle.properties里面添加
-   android.injected.testOnly=false
-   ```
-
 #### fori循环更新出错
 
 ```java
