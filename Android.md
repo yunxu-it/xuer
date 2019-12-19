@@ -4,6 +4,22 @@
 
 ## Solution
 
+#### 全屏模式弹出对话框会显示状态栏的问题
+
+```java
+//在dialog的onStart()中添加如下代码
+
+if (Build.VERSION.SDK_INT < 16) {
+    alert.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+} else {
+    View decorView = alert.getWindow().getDecorView();
+    int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+    decorView.setSystemUiVisibility(uiOptions);
+}
+```
+
+
+
 #### 获取唯一设备ID
 
 ```java
