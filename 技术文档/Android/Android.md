@@ -1,103 +1,19 @@
-## Todo
+### Todo
 
 - [ ] A resource failed to call destroy
 
-## Solution
+### 异常处理
 
-#### 获取唯一设备ID
-
-```java
-// 好处：
-
-// 1.不需要特定权限.
-// 2.在99.5% Android装置（包括root过的）上，即API => 9，保证唯一性.
-// 3.重装app之后仍能取得相同唯一值.
-     
-public static String getUniquePsuedoID() {
-    // If all else fails, if the user does have lower than API 9 (lower
-    // than Gingerbread), has reset their device or 'Secure.ANDROID_ID'
-    // returns 'null', then simply the ID returned will be solely based
-    // off their Android device information. This is where the collisions
-    // can happen.
-    // Thanks http://www.pocketmagic.net/?p=1662!
-    // Try not to use DISPLAY, HOST or ID - these items could change.
-    // If there are collisions, there will be overlapping data
-    String m_szDevIDShort = "35"
-        + (Build.BOARD.length() % 10)
-        + (Build.BRAND.length() % 10)
-        + (Build.DEVICE.length() % 10)
-        + (Build.MANUFACTURER.length() % 10)
-        + (Build.MODEL.length() % 10)
-        + (Build.PRODUCT.length() % 10);
-
-    // Thanks to @Roman SL!
-    // http://stackoverflow.com/a/4789483/950427
-    // Only devices with API >= 9 have android.os.Build.SERIAL
-    // http://developer.android.com/reference/android/os/Build.html#SERIAL
-    // If a user upgrades software or roots their device, there will be a duplicate entry
-    String serial = null;
-    try {
-      serial = android.os.Build.class.getField("SERIAL").get(null).toString();
-
-      // Go ahead and return the serial for api => 9
-      return new UUID(m_szDevIDShort.hashCode(), serial.hashCode()).toString();
-    } catch (Exception exception) {
-      // String needs to be initialized
-      serial = "serial"; // some value
-    }
-
-    // Thanks @Joe!
-    // http://stackoverflow.com/a/2853253/950427
-    // Finally, combine the values we have found by using the UUID class to create a unique identifier
-    return new UUID(m_szDevIDShort.hashCode(), serial.hashCode()).toString();
-  }
-```
-
-
-
-#### ImageView 设置 MaxHeight 无效 
-
-> An optional argument to supply a maximum height for this view. Only valid if `setAdjustViewBounds(boolean)` has been set to true. 
+- ImageView 设置 MaxHeight 无效 
 
 ```xml
+// An optional argument to supply a maximum height for this view. Only valid if `setAdjustViewBounds(boolean)` has been set to true. 
 // 此二者必须同时存在
 android:adjustViewBounds="true"
 android:maxHeight="10dp"
 ```
 
-#### 单例模式
-
-```java
-// 基础懒汉式，线程不安全
-public class Singleton {
-    private static Singleton instance;
-    private Singleton (){}
-    public static Singleton getInstance() {
-     if (instance == null) {
-         instance = new Singleton();
-     }
-     return instance;
-    }
-}
-
-// 静态内部类
-public class Singleton {
-    private static class SingletonHolder {
-        private static final Singleton INSTANCE = new Singleton();
-    }
-    private Singleton (){}
-    public static final Singleton getInstance() {
-        return SingletonHolder.INSTANCE;
-    }
-}
-
-// 枚举
-public enum Singleton{
-    INSTANCE;
-}
-```
-
-#### Android Duplicate files copied in APK
+- Android Duplicate files copied in APK
 
 ```groovy
 android {
@@ -111,7 +27,49 @@ android {
 }
 ```
 
-#### 透明状态栏
+- Glide默认图，error图使用circleCrop无效
+
+```kotlin
+// Glide提供了Transformation 可以让图片显示成各种样式，但是使用Transformation时会有个问题，比如使用CircleCrop时预览图和加载失败后显示的图并不是圆形 https://www.jianshu.com/p/c087239333e0
+Glide.with(it).load(userData.avatar)
+    .error(Glide.with(it).load(R.mipmap.photo).circleCrop())
+    .diskCacheStrategy(DiskCacheStrategy.ALL)
+    .circleCrop()
+    .into(avatar)
+```
+
+- 三方库属性与项目属性冲突
+
+  在 `Application` 节点加入 `tools:replace` 属性
+
+  例如： `tools:replace="android:icon, android:label"` 
+
+#### 内存泄露
+
+- 高德地图Memory Leak
+
+如果开启了`amap.setMyLocationEnabled(true)`
+
+记得在你 `onDestroy`内设置`amap.setMyLocationEnabled(false)`
+
+```Java
+@Override
+public void onDestroy() {
+	super.onDestroy();
+    mMapView.onDestroy();
+    if (mMap != null) {
+        mMap.setMyLocationEnabled(false);
+        mMap.clear();
+    }
+}
+```
+
+### 功能代码
+
+- 获取唯一设备ID [Code](https://gist.github.com/yunxu-it/2c1d69bb238b4605fee9efaff664daff)
+
+
+- 透明状态栏
 
 ```Java
 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -131,7 +89,7 @@ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && useStatusBarColor) {
 }
 ```
 
-#### 默认EditText不获取 focus
+- 默认EditText不获取 focus
 
 
 ```xml
@@ -140,7 +98,7 @@ android:focusable="true"
 android:focusableInTouchMode="true"
 ```
 
-#### RecyclerView瀑布流
+- RecyclerView瀑布流
 
 
 ```java
@@ -158,84 +116,17 @@ mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
 });
 ```
 
-#### fori循环更新出错
-
-```java
- RealmResults<Data> dataList = realm.where(Data.class)
-                        .equalTo("example", true)
-                        .findAll();
- //size = 2
- for (int i = 0; i < dataList.size(); i++) {
-     dataList.get(i).setExample(false);
- }
-//当经过一次循环，i为1时，dataList的size变成了1,结果是只有一半的数据操作成功
-//所以最好使用如下方法
- for (Data data : dataList) {
-     data.setExample(false);
- }
-```
-
-#### 高德地图Memory Leak
-
-如果开启了`amap.setMyLocationEnabled(true)`
-
-记得在你 `onDestroy`内设置`amap.setMyLocationEnabled(false)`
-
-```Java
-@Override
-public void onDestroy() {
-	super.onDestroy();
-    mMapView.onDestroy();
-    if (mMap != null) {
-        mMap.setMyLocationEnabled(false);
-        mMap.clear();
-    }
-}
-```
-
-#### Glide默认图，error图使用circleCrop无效
-
-```kotlin
-// Glide提供了Transformation 可以让图片显示成各种样式，但是使用Transformation时会有个问题，比如使用CircleCrop时预览图和加载失败后显示的图并不是圆形 https://www.jianshu.com/p/c087239333e0
-Glide.with(it).load(userData.avatar)
-    .error(Glide.with(it).load(R.mipmap.photo).circleCrop())
-    .diskCacheStrategy(DiskCacheStrategy.ALL)
-    .circleCrop()
-    .into(avatar)
-```
-
-#### org.simpleframework.xml.core.PersistenceException: Constructor not matched for class
-
-Java默认有一个无参构造函数，但是一旦创建了一个有参构造函数，无参构造函数就需要自己重新定义,而当前问题的原因就是无参构造函数找不到。
-
-#### 全面屏适配
-
-- 官方推荐
+- 全面屏适配
 
 ```xml
 <meta-data android:name="android.max_aspect"
     android:value="ratio_float"/>
-// value 最好在2.1以上
+// value 最好在2.1以上，官方推荐
 ```
 
-
-
-## Note
-
-#### CPU架构
-
-|  日期   |         |    2010+    | 2011+ | 2012+ |           |        | 2014+  |
-| :---: | :-----: | :---------: | :---: | :---: | :-------: | :----: | :----: |
-| CPU架构 |  ARMv5  |    ARMv7    |  x86  | MIPS  |   ARMv8   | MIPS64 | x86_64 |
-| 对应ABI | armeabi | armeabi-v7a |  x86  | mips  | arm64-v8a | mips64 | x86_64 |
-
-- 使用android-21平台版本编译的.so文件运行在android-15的设备上
-
-  使用NDK时，你可能会倾向于使用最新的编译平台，但事实上这是错误的，因为NDK平台不是后向兼容的，而是前向兼容的。推荐使用app的minSdkVersion对应的编译平台。
-  
-  
-
 #### 视图类优化
+
+[那些 Android 程序员必会的视图优化策略](https://mp.weixin.qq.com/s/ep-Assy2j_EOUW8uWUQfSQ)
 
 - 移除布局中不需要的背景（`theme`自带背景）
 
@@ -268,13 +159,23 @@ Java默认有一个无参构造函数，但是一旦创建了一个有参构造�
 
 - onDraw()中不要创建新的局部变量，不做耗时操作
 
-##### 来源
+#### Note
 
-- [那些 Android 程序员必会的视图优化策略](https://mp.weixin.qq.com/s/ep-Assy2j_EOUW8uWUQfSQ)
+##### CPU架构
 
-#### Activity
+|  日期   |         |    2010+    | 2011+ | 2012+ |           |        | 2014+  |
+| :---: | :-----: | :---------: | :---: | :---: | :-------: | :----: | :----: |
+| CPU架构 |  ARMv5  |    ARMv7    |  x86  | MIPS  |   ARMv8   | MIPS64 | x86_64 |
+| 对应ABI | armeabi | armeabi-v7a |  x86  | mips  | arm64-v8a | mips64 | x86_64 |
 
-##### 生命周期
+- 使用android-21平台版本编译的.so文件运行在android-15的设备上
+
+  使用NDK时，你可能会倾向于使用最新的编译平台，但事实上这是错误的，因为NDK平台不是后向兼容的，而是前向兼容的。推荐使用app的minSdkVersion对应的编译平台。
+  
+
+##### Activity
+
+###### 生命周期
 
 - onUserInteraction
 
@@ -292,9 +193,9 @@ Java默认有一个无参构造函数，但是一旦创建了一个有参构造�
 >
 > 使用场景：监听用户主动离开页面(home，back，menu 键)
 
-#### 技巧
+### 命令技巧
 
-##### 查看apk签名类型
+- 查看apk签名类型
 
 ```shell
 // apksigner命令来源于 androidSdk/build-tools/*.*.* 文件夹
