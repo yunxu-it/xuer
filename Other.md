@@ -5,7 +5,7 @@
 > 输入以下命令
 >
 
-```shell
+```bash
 rd /S /Q "%WinDir%\System32\GroupPolicyUsers"
 rd /S /Q "%WinDir%\System32\GroupPolicy"
 gpupdate /force
