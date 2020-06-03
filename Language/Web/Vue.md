@@ -24,5 +24,5 @@
 
 9. 生命周期
 
-   ![Vue 实例生命周期](../../res/imgs/001lifecycle.png){:height="50%" width="50%"}
+   ![Vue 实例生命周期](../../res/imgs/001lifecycle.png)
 
