@@ -21,6 +21,7 @@
   xxx（keystore别名)
   ```
   2. zip对齐
+
      zip对齐，因为APK包的本质是一个zip压缩文档，经过边界对齐方式优化能使包内未压缩的数据有序的排列，从而减少应用程序运行时的内存消耗 ，通过空间换时间的方式提高执行效率
 
   ```bash
@@ -38,7 +39,7 @@
 
   3. apksigner
 
-  `v2签名方式 `时在Android7.0后才推出的，所以只有**版本>25**的SDK\build-tools\中才能找到apksigner.jar
+  `v2签名方式 ` 是在Android7.0后才推出的，所以只有**版本>25**的SDK\build-tools\中才能找到apksigner.jar
 
   ```bash
   java -jar apksigner.jar sign  --ks key.jks  --ks-key-alias releasekey  --ks-pass pass:pp123456  --key-pass pass:pp123456  --out output.apk  input.apk
