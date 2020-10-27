@@ -13,11 +13,9 @@
 ```
 
 - ArrayList 与 LinkedList 的区别，查找的时间复杂度是多少？
-
-1. ArrayList 是实现了基于动态数组的数据结构，LinkedList 基于链表的数据结构
-
-2. 对于随机访问 get 和 set，ArrayList 优于 LinkedList，因为 LinkedList 要移动指针
-3. 对于新增和删除操作 add 和 remove，LinedList 比较占优势，因为 ArrayList 要移动数据。 
+  - ArrayList 是实现了基于动态数组的数据结构，LinkedList 基于链表的数据结构
+  - 对于随机访问 get 和 set，ArrayList 优于 LinkedList，因为 LinkedList 要移动指针
+  - 对于新增和删除操作 add 和 remove，LinedList 比较占优势，因为 ArrayList 要移动数据。 
 
 ```java
 ArrayList 是线性表（数组）
