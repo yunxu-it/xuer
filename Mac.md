@@ -6,3 +6,11 @@
 sudo xattr -d com.apple.quarantine /Applications/xxxx.app
 ```
 
+- 英语系统环境下，Office显示中文界面
+
+```bash
+defaults write com.microsoft.Excel AppleLanguages '("zh-cn")'
+defaults write com.microsoft.Powerpoint AppleLanguages '("zh-cn")'
+defaults write com.microsoft.Word AppleLanguages '("zh-cn")'
+```
+
