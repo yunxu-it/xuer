@@ -1,4 +1,6 @@
-### 功能代码
+# 功能代码
+
+## 基础功能
 
 1. 获取唯一设备ID [Code](https://gist.github.com/yunxu-it/2c1d69bb238b4605fee9efaff664daff)
 
@@ -63,8 +65,7 @@ mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
 app:queryBackground="@color/transparent"
 ```
 
-
-### 项目配置
+## 项目配置
 
 1. 多渠道打包
 
