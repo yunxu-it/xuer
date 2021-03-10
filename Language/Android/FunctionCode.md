@@ -57,6 +57,12 @@ mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
     android:value="ratio_float"/>
 // value 最好在2.1以上，官方推荐
 ```
+6. 去除 SearchView 下划线
+
+```xml
+app:queryBackground="@color/transparent"
+```
+
 
 ### 项目配置
 
