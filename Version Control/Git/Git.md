@@ -1,3 +1,5 @@
+### Git 相关问题
+
 #### git remote: HTTP Basic: Access denied 错误
 
 ```bash
@@ -9,7 +11,7 @@ git config –global http.emptyAuth true
 
 
 
-#### Sourcetree - Fatal: ArgumentException encountered. 
+#### Sourcetree - Fatal: ArgumentException encountered.
 
 在标签栏“工具”-“选项”中，Git标签页，根据所选择Git的版本，更新Git
 

@@ -1,6 +1,10 @@
-###  Android Studio logcat配色
+### 编辑器配置
 
-![#AA66CC](https://placehold.it/15/AA66CC/000000?text=#AA66CC) **Assert**
+####  Android Studio
+
+- Logcat配色
+
+> ![#AA66CC](https://placehold.it/15/AA66CC/000000?text=+) ` #AA66CC` **Assert**
 >
 > ![#33B5E5](https://placehold.it/15/33B5E5/000000?text=+) ` #33B5E5` **Debug**
 >
