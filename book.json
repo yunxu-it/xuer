@@ -1,0 +1,25 @@
+{
+	"author": "李小龙",
+	"plugins": [
+		"-search",
+		"prism",
+		"-highlight",
+		"-summary"
+	],
+	"ignores": ["node_modules","_book"],
+	"sortedBy": "-",
+	"pluginsConfig": {
+		"prism": {
+			"css": [
+				"prismjs/themes/prism-tomorrow.css"
+			],
+			"lang": {
+				"flow": "typescript"
+			},
+			"ignore": [
+				"mermaid",
+				"eval-js"
+			]
+		}
+	}
+}

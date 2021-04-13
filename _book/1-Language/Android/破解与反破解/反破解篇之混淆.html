@@ -1,0 +1,846 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>反破解篇之混淆 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="李小龙">
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../Apk 瘦身.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Language
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Android
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" >
+            
+                <span>
+            
+                    
+                    破解与反破解
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1.1.1" data-path="反破解篇之混淆.html">
+            
+                <a href="反破解篇之混淆.html">
+            
+                    
+                    反破解篇之混淆
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../Apk 瘦身.html">
+            
+                <a href="../Apk 瘦身.html">
+            
+                    
+                    Apk 瘦身
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../FunctionCode.html">
+            
+                <a href="../FunctionCode.html">
+            
+                    
+                    Function Code
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../VideoPlayer.html">
+            
+                <a href="../VideoPlayer.html">
+            
+                    
+                    Video Player
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="../单元测试.html">
+            
+                <a href="../单元测试.html">
+            
+                    
+                    单元测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6" data-path="../异常处理.html">
+            
+                <a href="../异常处理.html">
+            
+                    
+                    异常处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7" data-path="../性能优化.html">
+            
+                <a href="../性能优化.html">
+            
+                    
+                    性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.8" data-path="../未归档内容.html">
+            
+                <a href="../未归档内容.html">
+            
+                    
+                    未归档内容
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.9" data-path="../终端命令.html">
+            
+                <a href="../终端命令.html">
+            
+                    
+                    终端命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.10" data-path="../设计模式.html">
+            
+                <a href="../设计模式.html">
+            
+                    
+                    设计模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../Flutter/Flutter.html">
+            
+                <a href="../../Flutter/Flutter.html">
+            
+                    
+                    Flutter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../ReactNative/">
+            
+                <a href="../../ReactNative/">
+            
+                    
+                    React Native
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../../ReactNative/异常处理.html">
+            
+                <a href="../../ReactNative/异常处理.html">
+            
+                    
+                    异常处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" >
+            
+                <span>
+            
+                    
+                    Shell
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../../Shell/基础语法.html">
+            
+                <a href="../../Shell/基础语法.html">
+            
+                    
+                    基础语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../Web/">
+            
+                <a href="../../Web/">
+            
+                    
+                    Web
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../../Web/React.html">
+            
+                <a href="../../Web/React.html">
+            
+                    
+                    React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" data-path="../../Web/Vue.html">
+            
+                <a href="../../Web/Vue.html">
+            
+                    
+                    Vue
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../2-Configuration/">
+            
+                <a href="../../../2-Configuration/">
+            
+                    
+                    Configuration
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../../2-Configuration/IDE.html">
+            
+                <a href="../../../2-Configuration/IDE.html">
+            
+                    
+                    IDE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../../2-Configuration/Mirrors.html">
+            
+                <a href="../../../2-Configuration/Mirrors.html">
+            
+                    
+                    Mirrors
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../../3-Interview/">
+            
+                <a href="../../../3-Interview/">
+            
+                    
+                    Interview
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" >
+            
+                <span>
+            
+                    
+                    Android
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" >
+            
+                <span>
+            
+                    
+                    Special
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1.1" data-path="../../../3-Interview/Android/Special/Binder 机制.html">
+            
+                <a href="../../../3-Interview/Android/Special/Binder 机制.html">
+            
+                    
+                    Binder 机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="../../../3-Interview/Android/Android 篇第 1 卷.html">
+            
+                <a href="../../../3-Interview/Android/Android 篇第 1 卷.html">
+            
+                    
+                    Android 篇第 1 卷
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.3" data-path="../../../3-Interview/Android/Java 篇第1卷.html">
+            
+                <a href="../../../3-Interview/Android/Java 篇第1卷.html">
+            
+                    
+                    Java 篇第1卷
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" >
+            
+                <span>
+            
+                    
+                    Resume
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../../../3-Interview/Resume/ResumePractice.html">
+            
+                <a href="../../../3-Interview/Resume/ResumePractice.html">
+            
+                    
+                    Resume Practice
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../../3-Interview/计算机网络第1卷.html">
+            
+                <a href="../../../3-Interview/计算机网络第1卷.html">
+            
+                    
+                    计算机网络第1卷
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../../4-System/">
+            
+                <a href="../../../4-System/">
+            
+                    
+                    System
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../../4-System/Mac.html">
+            
+                <a href="../../../4-System/Mac.html">
+            
+                    
+                    Mac
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../../4-System/Windows.html">
+            
+                <a href="../../../4-System/Windows.html">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../../5-Version Control/">
+            
+                <a href="../../../5-Version Control/">
+            
+                    
+                    Version Control
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../../5-Version Control/Git/Git.html">
+            
+                <a href="../../../5-Version Control/Git/Git.html">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../../../5-Version Control/Git/git-specs.html">
+            
+                <a href="../../../5-Version Control/Git/git-specs.html">
+            
+                    
+                    Specs
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../../5-Version Control/SVN.html">
+            
+                <a href="../../../5-Version Control/SVN.html">
+            
+                    
+                    SVN
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >反破解篇之混淆</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x6DF7;&#x6DC6;">&#x6DF7;&#x6DC6;</h2>
+<h5 id="&#x6DF7;&#x6DC6;&#x6587;&#x4EF6;&#x914D;&#x7F6E;">&#x6DF7;&#x6DC6;&#x6587;&#x4EF6;&#x914D;&#x7F6E;</h5>
+<pre class="language-"><code class="lang-properties"><span class="token comment"># &#x8C03;&#x8BD5;&#x6DF7;&#x6DC6;&#x914D;&#x7F6E;&#xFF0C;&#x53EF;&#x5728; buildType &#x4E2D;&#x914D;&#x7F6E; debuggable true&#xFF0C;&#x8FD9;&#x6837;&#x4F9D;&#x7136;&#x4F1A;&#x5728; logcat &#x4E2D;&#x663E;&#x793A;&#x9519;&#x8BEF;&#x6765;&#x6E90;</span>
+<span class="token comment"># &#x5728; Flutter &#x4E2D;&#x751F;&#x6210; release &#x5305;&#x4F7F;&#x7528;&#x6B64;&#x53C2;&#x6570;&#xFF0C;&#x4F1A;&#x9020;&#x6210;&#x5E94;&#x7528;&#x5D29;&#x6E83;</span>
+<span class="token comment"># &#x5C1A;&#x672A;&#x4FEE;&#x590D; https://github.com/flutter/flutter/issues/54126</span>
+
+<span class="token comment"># &#x85CF;&#x53F6;&#x4E8E;&#x6797;&#xFF0C;Proguard &#x4F1A;&#x5C06;&#x5305;&#x62EC;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;&#x7684;&#x6240;&#x6709;&#x7C7B;&#x6587;&#x4EF6;&#x90FD;&#x79FB;&#x52A8;&#x5230;&#x4F60;&#x7684;&#x5305;&#x540D;&#x4E4B;&#x4E0B;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x4E2A;&#x914D;&#x7F6E;&#x6709; bug&#xFF0C;&#x4F7F;&#x7528;&#x9700;&#x8981;&#x6D4B;&#x8BD5;&#xFF0C;&#x614E;&#x7528;</span>
+<span class="token attr-name">-repackageclasses</span> <span class="token attr-value">&apos;packageName &#x5305;&#x540D;&apos;</span>
+
+<span class="token comment"># &#x4F7F;&#x7528;&#x6DF7;&#x6DC6;&#x5B57;&#x5178;</span>
+<span class="token comment">#&#x6307;&#x5B9A;&#x5916;&#x90E8;&#x6A21;&#x7CCA;&#x5B57;&#x5178;</span>
+<span class="token attr-name">-obfuscationdictionary</span> <span class="token attr-value">dictionary.txt</span>
+<span class="token comment">#&#x6307;&#x5B9A;class&#x6A21;&#x7CCA;&#x5B57;&#x5178;</span>
+<span class="token comment">#-classobfuscationdictionary dictionary.txt</span>
+<span class="token comment">#&#x6307;&#x5B9A;package&#x6A21;&#x7CCA;&#x5B57;&#x5178;</span>
+<span class="token comment">#-packageobfuscationdictionary dictionary.txt</span>
+
+<span class="token comment"># &#x6E05;&#x7406;&#x65E5;&#x5FD7;&#xFF0C;&#x9700;&#x5F00;&#x542F;optimize</span>
+<span class="token attr-name">-assumenosideeffects</span> <span class="token attr-value">class android.util.Log {</span>
+
+<span class="token attr-name">    public</span> <span class="token attr-value">static boolean isLoggable(java.lang.String, int);</span>
+
+<span class="token attr-name">    public</span> <span class="token attr-value">static int d(...);</span>
+
+<span class="token attr-name">    public</span> <span class="token attr-value">static int w(...);</span>
+
+<span class="token attr-name">    public</span> <span class="token attr-value">static int v(...);</span>
+
+<span class="token attr-name">    public</span> <span class="token attr-value">static int i(...);</span>
+
+}
+
+<span class="token comment"># &#x5BF9;&#x4E8E;&#x67D0;&#x4E9B;&#x5305;&#x4E0B;&#x7684; Exception &#x7C7B;&#x5F3A;&#x5236;&#x6DF7;&#x6DC6;&#xFF08;&#x5176;&#x4F59;&#x4E0D;&#x6DF7;&#x6DC6;&#xFF09;&#xFF1A;</span>
+<span class="token attr-name">-keep</span> <span class="token attr-value">public class !com.yourtargetpackage.**, * extends java.lang.Exception</span>
+</code></pre>
+<h5 id="&#x4EE3;&#x7801;&#x5B89;&#x5168;">&#x4EE3;&#x7801;&#x5B89;&#x5168;</h5>
+<ul>
+<li><p>&#x4E0D;&#x8981;&#x786C;&#x7F16;&#x7801;&#x5199;&#x5165;&#x5B57;&#x7B26;&#x4E32;&#x503C;&#xFF0C;&#x5373;&#x4F7F;&#x4F60;&#x4E0D;&#x5F97;&#x4E0D;&#x8FD9;&#x4E48;&#x505A;&#xFF0C;&#x4E5F;&#x81F3;&#x5C11;&#x5E94;&#x8BE5;&#x53E6;&#x8D77;&#x4E00;&#x4E2A;&#x7C7B;&#xFF0C;&#x6BD4;&#x5982;&#x53EB;&#x505A; HardStrings&#xFF0C;&#x7528;&#x4E8E;&#x9759;&#x6001;&#x5B58;&#x653E;&#x8FD9;&#x4E9B;&#x786C;&#x7F16;&#x7801;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x8FD9;&#x6837;&#x53CD;&#x7F16;&#x8BD1;&#x8005;&#x53EA;&#x80FD;&#x641C;&#x7D22;&#x5230;&#x4F60;&#x8FD9;&#x4E2A;&#x5E38;&#x91CF;&#x7C7B;&#xFF0C;&#x800C;&#x8F83;&#x96BE;&#x4EE5;&#x641C;&#x7D22;&#x5230;&#x8FD9;&#x4E9B;&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;&#x88AB;&#x54EA;&#x91CC;&#x5F15;&#x7528;&#x3002;</p>
+</li>
+<li><p>&#x5BF9;&#x4E8E;&#x4F60;&#x4E0D;&#x5F97;&#x4E0D;&#x7559;&#x4E0B;&#x7684;&#x4E00;&#x4E9B;&#x786C;&#x7F16;&#x7801;&#x548C;&#x65E5;&#x5FD7;&#x5185;&#x5BB9;&#xFF0C;&#x53EF;&#x4EE5;&#x91C7;&#x7528;<strong>&#x7F16;&#x7801;&#x5F62;&#x5F0F;&#x66FF;&#x6362;</strong></p>
+<pre class="language-"><code class="lang-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">String</span> SHOULD_REGISTER_FIRST_ERROR <span class="token operator">=</span> <span class="token string">&quot;ssrrffe&quot;</span><span class="token punctuation">;</span>
+<span class="token comment">// &#x6DF7;&#x6DC6;&#x540E;</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">String</span> abc <span class="token operator">=</span> <span class="token string">&quot;ssrrffe&quot;</span><span class="token punctuation">;</span>
+</code></pre>
+</li>
+<li><p>&#x628A; AppKey &#x4E4B;&#x7C7B;&#x7279;&#x522B;&#x654F;&#x611F;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x5185;&#x5BB9;&#x85CF;&#x5728; native so &#x6587;&#x4EF6;&#x4E2D;</p>
+</li>
+<li><p>&#x5728;&#x5F00;&#x53D1;&#x5F00;&#x6E90;&#x5E93;&#x6216; SDK &#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5728; gradle &#x4E2D;&#x4F7F;&#x7528; consumerProguardFiles &#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x4E3A;&#x4F60;&#x7684;&#x5E93;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A; proguard rule &#x6587;&#x4EF6;&#xFF0C;&#x8BE5;&#x6587;&#x4EF6;&#x5C06;&#x540C;&#x65F6;&#x88AB;&#x6253;&#x5305;&#x5230; aar &#x4E2D;&#xFF0C;&#x5F53;&#x6709;&#x4EBA;&#x901A;&#x8FC7; maven &#x5F15;&#x7528;&#x4F60;&#x7684;&#x8FD9;&#x4E2A;&#x5E93;&#x65F6;&#xFF0C;&#x5176;&#x9644;&#x5E26;&#x7684; consumer proguard rule &#x5C06;&#x81EA;&#x52A8;&#x88AB;&#x5408;&#x5E76;&#x5230;&#x4F60;&#x7684;&#x9879;&#x76EE; rules &#x4E2D;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x597D;&#x5904;&#x662F;&#xFF0C;&#x5E93;&#x7684;&#x4F7F;&#x7528;&#x8005;&#x4EEC;&#x4E0D;&#x9700;&#x8981;&#x4E86;&#x89E3;&#x5BF9;&#x4E8E;&#x8FD9;&#x4E2A;&#x5E93;&#x9700;&#x8981;&#x505A;&#x54EA;&#x4E9B; proguard &#x6392;&#x9664;&#x89C4;&#x5219;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x81EA;&#x5E26;&#x89C4;&#x5219;&#x4E14;&#x4F1A;&#x81EA;&#x52A8;&#x5E94;&#x7528;&#x3002;&#x8FD9;&#x5728;&#x5F00;&#x53D1;&#x5F00;&#x6E90;&#x5E93;&#x662F;&#x5341;&#x5206;&#x6709;&#x7528;&#x7684;&#x3002;</p>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="../Apk 瘦身.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Apk 瘦身">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"反破解篇之混淆","level":"1.2.1.1.1","depth":4,"next":{"title":"Apk 瘦身","level":"1.2.1.2","depth":3,"path":"1-Language/Android/Apk 瘦身.md","ref":"1-Language/Android/Apk 瘦身.md","articles":[]},"previous":{"title":"破解与反破解","level":"1.2.1.1","depth":3,"ref":"","articles":[{"title":"反破解篇之混淆","level":"1.2.1.1.1","depth":4,"path":"1-Language/Android/破解与反破解/反破解篇之混淆.md","ref":"1-Language/Android/破解与反破解/反破解篇之混淆.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-search","prism","-highlight","-summary","livereload"],"ignores":["node_modules","_book"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{"css":["prismjs/themes/prism-tomorrow.css"],"lang":{"flow":"typescript"},"ignore":["mermaid","eval-js"]},"livereload":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"李小龙","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":"-","variables":{},"gitbook":"*"},"file":{"path":"1-Language/Android/破解与反破解/反破解篇之混淆.md","mtime":"2021-04-13T02:46:48.496Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-13T09:27:47.371Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
