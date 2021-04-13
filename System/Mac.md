@@ -1,4 +1,4 @@
-### Mac 系统问题
+## Mac 系统问题
 
 - App 在 `macOS Catalina` 下提示已损坏无法打开
 
