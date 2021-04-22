@@ -8,6 +8,15 @@
   需要先配置`build-tools`目录环境变量，如`ANDROID_HOME/build-tools/29.0.3`
   ```
 
+- 使用管理员权限提交命令
+
+```java
+Runtime.getRuntime().exec("su -c \"command\"")
+// 如果无效，使用双层""
+Runtime.getRuntime().exec("su -c \"\"command\"\"")                        
+```
+
+
 
 - Android签名流程
   
