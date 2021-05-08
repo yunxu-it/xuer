@@ -92,8 +92,6 @@ Runtime.getRuntime().exec("su -c \"command\"")
 Runtime.getRuntime().exec("su -c \"\"command\"\"")                        
 ```
 
-
-
 ## 项目配置
 
 1. 多渠道打包
