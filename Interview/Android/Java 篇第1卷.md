@@ -1,7 +1,6 @@
 - String a = new String("abc") 与 String a = "abc" 的区别
 
 ```java
-
 创建对象个数不同
 
 String str="abc" 只在字符串常量池里创建一个对象。（如果字符串常量池里有"abc"，则一个都不创建直接返回地址值给str）
